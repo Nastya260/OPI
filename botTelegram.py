@@ -34,4 +34,4 @@ class Bot_telegram:
 
 if __name__ == '__main__':
     c = Bot_telegram()
-    asyncio.run((c.send_ticket('uliaa.ouo@gmail.com', 13)))
+    asyncio.run((c.send_ticket('example@gmail.com', 13)))
