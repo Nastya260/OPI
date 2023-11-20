@@ -2,17 +2,24 @@ import asyncio
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from aiosmtplib import SMTP
-from aiogram import Bot, Dispatcher, types
+from telebot import TeleBot
 
 
 class Bot_telegram:
     """
-    describe telegram bot
+    describes telegram bot
+        bot_name - telegram bot
+        email - cinema's email
+        pwd - temporary password for email
+
+    def send_ticket: void
+        parameters:
+        user_email:string - email of user who has bought ticket
+        ticket_id:int - number of bought ticket
     """
 
     def __init__(self):
-        self.bot_name = Bot(token='6596089373:AAF0WXjtUJoj8mWihdlF8c6KK5u7kmUmxj4')
-        self.dp = Dispatcher()
+        self.bot_name = TeleBot(token='6596089373:AAF0WXjtUJoj8mWihdlF8c6KK5u7kmUmxj4')
         self.email = 'ourcinema@ukr.net'
         self.pwd = 'AfYPoASgrMTKmaoE'
 
@@ -35,3 +42,4 @@ class Bot_telegram:
 if __name__ == '__main__':
     c = Bot_telegram()
     asyncio.run((c.send_ticket('example@gmail.com', 13)))
+    c.bot_name.polling()
