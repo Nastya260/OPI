@@ -1,0 +1,9 @@
+    def choose_session(self):
+        # Assuming the user selects a session by its identifier
+        session_id = input("Enter the session identifier you chose: ")
+        try:
+            session_id = int(session_id)
+            return session_id
+        except ValueError:
+            print("Invalid input. Please enter a valid session identifier.")
+            return None
